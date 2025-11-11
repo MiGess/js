@@ -17,9 +17,16 @@
         let correo = prompt("Ingrese su correo");
         let edad = parseInt(prompt("Ingrese su edad:"));
         if (edad >= 18) {
-        document.write ("Es mayor de edad");}
+        document.write ("Nombre: " + nombre + "<br>");
+        document.write("correo: " + correo + "<br>");
+        document.write("Es mayor de edad" + edad + " años.");
+        }
         else
-        {document.write("Es menor de edad");}
+        {document.write("Es menor de edad");
+            document.write("Nombre: " + nombre + "<br>");
+            document.write("correo: " + correo + "<br>");
+            document.write("Es menor de edad" + edad + " años."); 
+        }
     </script>
 </body>
 </html
