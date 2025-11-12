@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           let nota1 = parseFloat(prompt("Ingresa la primera nota:"));
+        let nota2 = parseFloat(prompt("Ingresa la segunda nota:"));
+        let nota3 = parseFloat(prompt("Ingresa la tercera nota:"));
+
+        let promedio = (nota1 + nota2 + nota3) / 3;
+        if (promedio > 10){
+            document.write("La nota no puede ser mayor a 10");
+            }
+            else if (promedio >= 7)
+            {
+            document.write("Aprobo");
+            
+            }else if (promedio >= 4)
+            {
+            document.write("Recupera");
+            
+            }
+            else if (promedio < 0)
+            {
+            document.write("Error nota no valida");
+            
+            }
+             else {
+        document.write("Reprobo");
+      }
+    </script>
+</body>
+</html>
