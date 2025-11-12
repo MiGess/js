@@ -7,7 +7,24 @@
 </head>
 <body>
     <h1>
+        Ingresa tus nombre correo y la nota que sacaste, recuerda que se aprueba con 7 o mas
+        </h1>
         
-    </h1>
+    <script>
+            let nombre = prompt ("ingrese su nombre");
+            let correo = prompt ("ingrese su correo");
+            let nota = parseFloat (prompt ("ingrese su nota"));
+            if (nota >=7) {
+                document.write ("Nombre: " + nombre + "<br>");
+                document.write("Correo: " + correo + "<br>");
+                document.write("Aprobada con: " + nota);
+            }
+            else {
+                document.write ("Nombre: " + nombre + "<br>");
+                document.write("Correo: " + correo + "<br>");
+                document.write("Reprobada con: " + nota);
+            }
+    </script>
+    
 </body>
 </html>
