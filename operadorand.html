@@ -6,15 +6,32 @@
     <title>Operador and (&&)</title>
 </head>
 <body>
+    <p>Desarrollar un programa para veriricar el acceso a un evento, la pesona debe ser mayor de edad pero si 
+        tiene acceso VIP puede entrar aun que sea menor de edad, si no cumple no entra</p>
     <h1>
         Verificar acceso a Evento
     </h1>
     <input type="number" id="edad" placeholder="Edad">
     <label> <input type="checkbox" id="vip">Invitacion VIP</label><br><br>
-    <button onclick="verificar_acceso()"></button>
+    <button onclick="verificarAcceso()">Verificar</button>
     <p id="mensaje"></p>
     <script>
-        
+        function verificarAcceso() 
+        {
+            let edad = parseInt(document.getElementById("edad").value);
+            let vip = document.getElementById("vip").checked;
+            let mensaje = "";
+            if (edad >= 18) {
+                mensaje = "Acceso permitido";
+            } else {
+                if (vip && edad >= 17) {
+                    mensaje = "Acceso permitido con invitacion VIP";
+                } else {
+                    mensaje = "Acceso denegado";
+                }
+            }
+            document.getElementById("mensaje").textContent = mensaje;
+        }
     </script>
 </body>
 </html>
