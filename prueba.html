@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+</head>
+<body>
+    <h1>
+        Ingresa tres números, si los dos primeros son iguales suma los tres y si son diferentes multiplica los tres
+    </h1>
+    <script>
+        let numero1 =parseFloat(prompt("Ingresa el primer número:"));
+        let numero2 =parseFloat(prompt("Ingresa el segundo número:"));
+        let numero3 =parseFloat(prompt("Ingresa el tercer número:"));
+        if (numero1 == numero2) {
+            let suma = numero1 + numero2 + numero3;
+            document.write(`Los dos primeros números son iguales. La suma de los tres números es: ${suma}`);
+        } else {
+            let multiplicacion = numero1 * numero2 * numero3;
+            document.write(`Los dos primeros números son diferentes. La multiplicación de los tres números es: ${multiplicacion}`);
+        }
+    </script>
+</body>
+</html>
