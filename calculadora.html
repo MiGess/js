@@ -19,12 +19,31 @@
         else {
             let menu = prompt(
                 "seleccione una operacion\n" + 
-                "suma\n" +
-                "Resta \n" +
-                "Producto \n" +
-                "Division \n"
+                "1.suma\n" +
+                "2.Resta \n" +
+                "3.Producto \n" +
+                "4.Division \n"
             );
-            let resultado;
+            let resultado; 
+            if (menu == "1") {
+                resultado = nuemro1 + nuemro2;
+                alert("El resultado de la suma de " + nuemro1 + " y " + nuemro2 + " es: " + resultado);
+            } else if (menu == "2") {
+                resultado = nuemro1 - nuemro2;
+                alert("El resultado de la resta de " + nuemro1 + " y " + nuemro2 + " es: " + resultado);
+            } else if (menu == "3") {
+                resultado = nuemro1 * nuemro2;
+                alert("El resultado de la multiplicacion de " + nuemro1 + " y " + nuemro2 + " es: " + resultado);
+            } else if (menu == "4") {
+                if (nuemro2 === 0) {
+                    alert("Error: No se puede dividir entre cero.");
+                } else {
+                    resultado = nuemro1 / nuemro2;
+                    alert("El resultado de la division es: " + resultado.toFixed);
+                }
+            } else {
+                alert("Operacion no valida");
+            }
 
         }
     </script>
