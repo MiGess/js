@@ -20,16 +20,16 @@
         function clasificarEdad(){
             let edad = document.getElementById("edad").value;
             let mensaje = "";
-            if (edad < 12 ){
+                 if (edad < 12 ){
                 mensaje = "Tu Zona es infantil";
-            }
-            else if (edad >= 12 && edad <=17){
+                     }
+                     else if (edad >= 12 && edad <=17){
                 mensaje = "Tu zona es la juvenil";
-            }
-            else if (edad >=18){
+                 }
+                     else if (edad >=18){
                 mensaje = "Tu Zona es la de adultos";
-            }
-            else {
+             }
+                      else {
                 mensaje = "Ingresa una edad valida, te recuerdo que debe ser un numero positivo";
             }
             document.getElementById("zona").textContent = mensaje;
