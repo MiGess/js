@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        un parque de diverciones necesita clasificar las edades de sus visitantes asi:
+        menores de 12 años: son infantil 
+        de 12 a 17 años: zona juvenil 
+        18 o mas: Zona adulta
+        el programa debera pedir la edad y con respecto a esta mostrar mensaje a que zona ir.
+    </p>
+    <input type="number" id = "edad" placeholder="Ingrese si edad" >
+    <button onclick="clasificarEdad()">Evaluacion</button>
+    <p id="zona"></p>
+    <script>
+        function clasificarEdad(){
+            let edad = document.getElementById("edad").value;
+            let mensaje = "";
+            if (edad < 12 ){
+                mensaje = "Tu Zona es infantil";
+            }
+            else if (edad >= 12 && edad <=17){
+                mensaje = "Tu zona es la juvenil";
+            }
+            else if (edad >=18){
+                mensaje = "Tu Zona es la de adultos";
+            }
+            else {
+                mensaje = "Ingreesa una edad valida, te recuerdo que sebe ser un numero positivo";
+            }
+            document.getElementById("zona").textContent = mensaje;
+        }
+    </script>
+</body>
+</html>

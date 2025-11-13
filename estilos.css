@@ -1,14 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: #f0f0f0;
     margin: 20px;
 }
 .container {
-    background-color: #fff;
+    background-color: #cad61bcb;
     padding: 0px;
     border-radius: 15px;
-    box-shadow: 15px 10px 50px rgba(0, 0, 0, 0.1);
-    max-width: 393px;
+    max-width: 350px;
     margin: auto;
 }
 p {
@@ -33,7 +32,7 @@ h1 {
 {
     margin-top: 20px;
     font-size: 20px;
-    color: #007BFF;
+    color: #00050a;
     text-align: center;
 }
 label {

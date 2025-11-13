@@ -15,7 +15,7 @@
        
     </h1>
     <input class="edad" type="number" id="edad" placeholder="Edad">
-    <label> <input type="checkbox" id="vip">Invitacion VIP</label><br><br>
+    <label> <input type="checkbox" id="vip">VIP</label><br><br>
     <button onclick="verificarAcceso()">Verificar</button>
     
     
@@ -33,7 +33,7 @@
                 mensaje = "Acceso permitido";
             } else {
                 if (vip && edad >= 17) {
-                    mensaje = "Acceso permitido con invitacion VIP";
+                    mensaje = "Acceso permitido como invitado VIP";
                 } else {
                     mensaje = "Acceso denegado";
                 }
