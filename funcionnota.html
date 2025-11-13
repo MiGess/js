@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evalucion</title>
+</head>
+<body>
+    <p>
+        Programa que muetras mensaje: aprobaste si es mayor a 3, puede recuperar si es mayor a 2.5 y reprobarte si es menos a 2.5</p>
+    <h1>
+        Evaluar nota
+    </h1>
+    <input type="number" id ="nota" placeholder="Ingrese su nota" step="0.1">
+    <button onclick="evaluarNota()">Evaluacion</button>
+    <p id="resultado"></p>
+    <script>
+        function evaluarNota() {
+            let nota = parseFloat(document.getElementById("nota").value);
+            let mensaje = "";
+            if (nota >=3 && nota <=5){
+                mensaje = "Aprobaste";
+                } else if (nota >=2.5 && nota <3){ 
+                    mensaje = "Puedes recuperar";
+                } 
+                else if (nota <0 || nota >5){
+                    mensaje = "Nota invalida";
+                }
+                else {
+                    mensaje = "Reprobaste";
+                }
+            document.getElementById("resultado").textContent = mensaje;
+        }
+    </script>
+</body>
+</html>

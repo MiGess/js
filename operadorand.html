@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operador and (&&)</title>
+    <title>Operador and (&&)</title><link rel="stylesheet" href="estilos.css">
 </head>
 <body>
     <p>Desarrollar un programa para veriricar el acceso a un evento, la pesona debe ser mayor de edad pero si 
         tiene acceso VIP puede entrar aun que sea menor de edad, si no cumple no entra</p>
     <h1>
-        Verificar acceso a Evento
+        <div class="titulo">
+             Verificar acceso a Evento
+        </div>
+       
     </h1>
-    <input type="number" id="edad" placeholder="Edad">
+    <input class="edad" type="number" id="edad" placeholder="Edad">
     <label> <input type="checkbox" id="vip">Invitacion VIP</label><br><br>
     <button onclick="verificarAcceso()">Verificar</button>
-    <p id="mensaje"></p>
-    <script>
+    
+    
+    <div class="container">
+    <p class="mensaje" id="mensaje"></p>
+     
+    
+        <script>
         function verificarAcceso() 
         {
             let edad = parseInt(document.getElementById("edad").value);
@@ -33,5 +41,7 @@
             document.getElementById("mensaje").textContent = mensaje;
         }
     </script>
+    </div>
+    
 </body>
 </html>
