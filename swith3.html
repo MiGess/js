@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de unidad</title>
+</head>
+<body>
+    <h1>Desarrolla un programa que permita al usurio seleccionar una moneda
+         para que el programa lo convierta a pesos   </h1>
+        <h2>
+            Conversor de monedas:
+        </h2>
+        <input type="number " id="pesos" placeholder="Ingrese en monto.">
+        <button onclick="covertir()">Convertir</button>
+        <p id="resultado"></p>
+
+        <script>
+            function covertir(){
+                let pesos= parseFloat(document.getElementById("pesos").value);
+                if (isNaN(pesos) || pesos <= 0){
+                    document.getElementById("resultado").textContent = "Por favor ingrese un monto valido";
+                    return
+                }
+                let opcion = parseInt(prompt("Selecciones una moneda \n" +
+                "1 Dolar \n" +
+                "2 Euro \n" +
+                "3 pesos mexicanos \n" ));
+                let mensaje = "";
+                let resultado = 0;
+                switch (opcion){
+                    case 1:
+                        resultado = pesos / 3700;
+                        mensaje = pesos + " pesos son " + resultado.toFixed(2) + " dolares";
+                        break;
+                    case 2:
+                        resultado = pesos / 4500;
+                        mensaje = pesos + " pesos son " + resultado.toFixed(2) + " euros";
+                        break;
+                    case 3:
+                        resultado = pesos / 204;
+                        mensaje = pesos + " pesos son " + resultado.toFixed(2) + " pesos mexicanos";
+                        break;
+                    default:
+                        mensaje = "Opcion no valida, seleccione 1|2|3";
+                }
+                document.getElementById("resultado").textContent = mensaje;
+            }
+        </script>
+</body>
+</html>
