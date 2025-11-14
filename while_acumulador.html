@@ -10,19 +10,23 @@
         Acumulador While
     </h1>
     <input type="number" id="multiplicado" placeholder="Ingrese el numero a multiplicar">
-    <button onclick="calcular">Calcular <p></p></button>
+    <input type="number" id="limite" placeholder="Ingrese el limite">
+    <button onclick="generaraTabla()">Mostrar tabla</button>
+
     <p id="resultado"></p>
     <script>
-        function calcular() {
-        let numero = parseInt(prompt("Ingrese el numero de la tabla de multiplicar:"));
-        let limite = parseInt(prompt("Dime hasta donde parar:"));
-        let x = 1;
-        let multiplos = numero;
-        while (x <= limite) {
-            document.write( numero + " multiplicado por " + x + " es " + multiplos + "<br>");
-            x++;
-            multiplos = multiplos + numero;
+        function generaraTabla() {
+       let numero = parseInt(document.getElementById("multiplicado").value);
+       let limite = parseInt(document.getElementById("limite").value);
+
+       let i = 1;
+       let text = "";
+       while (i <= limite) {
+        text += numero + " x " + i + " = " + (numero * i) + "<br>";
+        i++;    
+        
         }
+        document.getElementById("resultado").innerHTML = text;
     }
     </script>
 </body>
