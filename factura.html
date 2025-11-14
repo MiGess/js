@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Factura</title><link rel="stylesheet" href="factura_estilo.css">
+    
 </head>
 <body>
     <h1>
@@ -14,15 +15,15 @@
         <input type="number" id="precio" placeholder="Precio del producto">
         <input type="number" id="Cantidad" placeholder="Cantidad">
         <button type="button" onclick="agregarproducto()">Agregar</button>
-        </form>
+    </form>
         <br>
         <table border="1" width="50%">
             <thead>
                 <tr>
-                    <td>producto</td>
-                    <td>Precio</td>
-                    <td>Cantidad</td>
-                    <td>Subtotal</td>
+                    <th>producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
                 </tr>
                 <tbody id="detalle"> </tbody>
             </thead>
@@ -31,7 +32,7 @@
         <script>
             let continuar = true; //variable de control del ciclo
             let total = 0; //acumulador del total
-            function agregarproducto(){
+            function agregarproducto(){}
                 while (continuar){
                 //cpturar datos
                     let nombre = document.getElementById("nombre").value;
