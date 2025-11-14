@@ -19,10 +19,10 @@
         <table border="1" width="50%">
             <thead>
                 <tr>
-                    <th>producto</th>
-                    <th>Precio</th>
-                    <th>Cantidad</th>
-                    <th>Subtotal</th>
+                    <td>producto</td>
+                    <td>Precio</td>
+                    <td>Cantidad</td>
+                    <td>Subtotal</td>
                 </tr>
                 <tbody id="detalle"> </tbody>
             </thead>
@@ -56,9 +56,14 @@
                     </tr>
                     `;
                     document.getElementById("detalle").innerHTML += fila;
-                    document.getElementById("totalFinal").innerText = `Total: $${total}`;
-                    continuar = false; //para salir del ciclo
+                    document.getElementById("formProducto").reset(); //limpiar formulario
+                    document.getElementById("totalFinal").textContent = "Total:$" + total;
+                    //preguntar si desea continuar
+                    let respuesta = confirm("¿Desea agregar otro producto?");
+                    if (respuesta === false || respuesta === null ){
+                        continuar = false; //salir del ciclo
                 }
+                break
             }
         </script>
 </body>
