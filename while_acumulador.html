@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Acumulador While
+    </h1>
+    
+    <script>
+        let numero = parseInt(prompt("Ingrese el numero de la tabla de multiplicar:"));
+        let limite = parseInt(prompt("Dime hasta donde parar:"));
+        let x = 1;
+        let multiplos = numero;
+        while (x <= limite) {
+            document.write( numero + " multiplicado por " + x + " es " + multiplos + "<br>");
+            x++;
+            multiplos = multiplos + numero;
+        }
+    </script>
+</body>
+</html>
