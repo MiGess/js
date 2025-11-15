@@ -12,7 +12,55 @@
     <h1>
         Registro de estudiantes:
     </h1>
-    <form action="formEst"></form>
+    <form action="formEst">
     <input type="text" id ="nombre" placeholder="Nombre del estudiante">
+    <input type="number" id="nota1" placeholder="Nota 1 (0 - 5):">
+    <input type="number" id="nota2" placeholder="Nota 2 (0 - 5):">
+    <input type="number" id="nota3" placeholder="Nota 3 (0 - 5):">
+    <button type="button" onclick="calcularPromedio()">Agregar alumno</button>
+    </form>
+    <br>
+    <table border="1" width="70%">
+    <thead>
+        <tr>
+            <th>Estudiante</th>
+            <th>Nota 1</th>
+            <th>Nota 2</th>
+            <th>Nota 3</th>
+            <th>Promedio</th>
+        </tr>
+    </thead>
+    <tbodyid id="lista"></tbody>
+</table>
+<script>
+    let agregados = 0;
+    function agregar(){
+        if (agregardos === 10){
+            alert("Ya alcanzo el maximo de estudiantes (10)");
+            return;
+        }
+        let nombre = document.getElementById("nombre").value;
+        let nota1 = parseFloat(document.getElementById("nota1").value);
+        let nota2 = parseFloat(document.getElementById("nota2").value);
+        let nota3 = parseFloat(document.getElementById("nota3").value);
+        if (nombre === "" || isNaN(nota1) || isNaN(nota2) || isNaN(nota3) || nota1 < 0 || nota1 > 5 || nota2 < 0 || nota2 > 5 || nota3 < 0 || nota3 > 5){
+            alert("Datos incorrectos.");
+            return;
+        }
+        let promedio = ((nota1 + nota2 + nota3) / 3).toFixed(2);
+        document.getElementById("lista").innerHTML +=`
+        <tr> 
+            <td> ${nombre}</td>
+            <td> ${nota1}</td>
+            <td> ${nota2}</td>
+            <td> ${nota3}</td>
+            <td><strong> ${promedio}</strong></td>
+        </tr>
+        `;
+        agregados++;
+        document.getElementById("formEst").reset();
+
+    }
+</script>
 </body>
 </html>
