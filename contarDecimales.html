@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contar decimales </h1>
+    <script>
+        let numero = prompt("Ingrese numerom con decimales:");
+        if (numero === null){
+            document.write("operacion cancelada");
+        } else {
+            let texto = numero.trim().replace(".", ",");
+            let contador = 0;
+            let puntoEncontrado = false;
+            for (let i = 0; i <texto.length; i++){
+                if (texto[i] === ","){
+                    puntoEncontrado = true;
+                    continue;
+                }
+                if (puntoEncontrado && /[0-9]/.test(texto[i])){
+                    contador++;
+                }
+            }
+            document.write("El número " + numero + " tiene " + contador + " decimales.");
+        }
+    </script>
+</body>
+</html>

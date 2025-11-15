@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Conteo de numeros</h3>
+    <p>
+        programa para contar cuantos veces se repirte el numeros
+    </p>
+    <script>
+        let numeros = prompt("Ingresa varios numeros sepados por comas (,):");
+        let arreglo = numeros.split(",");
+        for (let x = 0; x < arreglo.length; x++){
+            arreglo[x] = Number(arreglo[x].trim()); // trim elimina elementos al principio y al final
+        }
+        let buscar = Number(prompt("Que numero quieres contar?"));
+        let contador = 0;
+
+        for (let x = 0; x < arreglo.length; x++){
+            if (arreglo[x] === buscar){
+                contador++;
+            }
+        }
+        document.write("El número " + buscar + " se repite " + contador + " veces.");
+    </script>
+
+    <script>
+        let numero = parseInt(prompt("Ingresa un número para ver su tabla de multiplicar:"));
+        let cuantos = parseInt(prompt("¿Hasta qué número quieres la tabla de multiplicar?"));
+        for (let i = 1; i <= cuantos; i++) {
+            document.write("El número " + numero + " Multiplicado por " + i + " es " + (numero * i) + "<br>");
+        }
+    </script>
+</body>
+</html>
