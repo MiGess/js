@@ -4,12 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Notas y Promedios</title> <link rel="stylesheet" href="nota.css">
-    <style>
-        /* Estilos básicos para mejorar la visualización */
-        body { font-family: sans-serif; padding: 20px; }
-        table { border-collapse: collapse; margin-top: 20px; }
-        th, td { padding: 8px; text-align: left; }
-    </style>
+
 </head>
 <body>
     <h1>
@@ -49,25 +44,22 @@
     let agregados = 0;
     
     function agregar() {
-        if (agregados >= 10) { // El límite debe ser >= 10 para evitar más de 10
+        if (agregados >= 10) { 
             alert("Ya se alcanzó el máximo de estudiantes (10)");
             return;
         }
 
-        // Obtener valores de los campos
+        
         let profesor = document.getElementById("profesor").value.trim();
         let materia = document.getElementById("materia").value.trim();
         let estudiante = document.getElementById("estudiante").value.trim();
         
-        // Convertir notas a números. Usamos parseFloat para permitir decimales.
+        
         let nota1 = parseFloat(document.getElementById("nota1").value);
         let nota2 = parseFloat(document.getElementById("nota2").value);
         let nota3 = parseFloat(document.getElementById("nota3").value);
 
-        // Lógica de validación mejorada: 
-        // 1. Verifica que los campos de texto no estén vacíos.
-        // 2. Verifica que las notas sean números válidos (no NaN).
-        // 3. Verifica que las notas estén en el rango de 0 a 5.
+        
         if (profesor === "" || materia === "" || estudiante === "" ||
             isNaN(nota1) || isNaN(nota2) || isNaN(nota3) ||
             nota1 < 0 || nota1 > 5 || nota2 < 0 || nota2 > 5 || nota3 < 0 || nota3 > 5) {
@@ -76,12 +68,10 @@
             return;
         }
 
-        // Cálculo del promedio
+       
         let promedio = ((nota1 + nota2 + nota3) / 3).toFixed(2);
 
-        // Agregar fila a la tabla (tbody)
-        // ¡IMPORTANTE! Se usa <td> en lugar de <th> para las celdas de datos
-        // y se eliminó la columna extra, para coincidir con 7 encabezados.
+        
         document.getElementById("lista").innerHTML += `
         <tr> 
             <td>${profesor}</td>
