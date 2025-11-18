@@ -1,0 +1,68 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fondo gris claro */
+    padding: 20px;
+    color: #333; /* Texto oscuro */
+}
+
+h1 {
+    color: #007bff; /* Título principal azul */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #555;
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* 2. Estilos del Formulario */
+#formEst {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+input[type="text"], input[type="number"] {
+    flex: 1 1 200px; /* Ancho flexible para los inputs */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que padding no afecte el ancho total */
+}
+
+/* Estilo y apariencia básica para el botón */
+button {
+    flex: 1 1 100%; /* El botón ocupa todo el ancho */
+    background-color: #5cb85c; /* Verde estándar */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #4cae4c; /* Ligeramente más oscuro al pasar el ratón */
+}
+
+/* 3. Estilos de la Tabla */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse; /* Bordes unidos */
+    background-color: white;
+    box-shadow: 0 2
+        4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    }

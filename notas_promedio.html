@@ -1,66 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro de Notas y Promedios</title> <link rel="stylesheet" href="nota.css">
+    <style>
+        /* Estilos básicos para mejorar la visualización */
+        body { font-family: sans-serif; padding: 20px; }
+        table { border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 8px; text-align: left; }
+    </style>
 </head>
 <body>
     <h1>
-        programa que pide 3 notas y muestra el promedio
+        Programa que pide 3 notas y muestra el promedio
     </h1>
-    <h1>
+    <h2>
         Registro de estudiantes:
-    </h1>
-    <form action="formEst">
-    <input type="text" id ="nombre" placeholder="Nombre del estudiante">
-    <input type="number" id="nota1" placeholder="Nota 1 (0 - 5):">
-    <input type="number" id="nota2" placeholder="Nota 2 (0 - 5):">
-    <input type="number" id="nota3" placeholder="Nota 3 (0 - 5):">
-    <button type="button" onclick="calcularPromedio()">Agregar alumno</button>
+    </h2>
+    <form id="formEst">
+        <input type="text" id="profesor" placeholder="Profesor:" required>
+        <input type="text" id="materia" placeholder="Materia:" required>
+        <input type="text" id="estudiante" placeholder="Nombre del estudiante" required>
+        <input type="number" id="nota1" placeholder="Nota 1 (0 - 5):" min="0" max="5" step="0.1" required>
+        <input type="number" id="nota2" placeholder="Nota 2 (0 - 5):" min="0" max="5" step="0.1" required>
+        <input type="number" id="nota3" placeholder="Nota 3 (0 - 5):" min="0" max="5" step="0.1" required>
+        <button type="button" onclick="agregar()">Agregar alumno</button>
     </form>
+    
     <br>
-    <table border="1" width="70%">
-    <thead>
-        <tr>
-            <th>Estudiante</th>
-            <th>Nota 1</th>
-            <th>Nota 2</th>
-            <th>Nota 3</th>
-            <th>Promedio</th>
-        </tr>
-    </thead>
-    <tbodyid id="lista"></tbody>
-</table>
+    
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>Profesor</th>
+                <th>Materia</th>
+                <th>Estudiante</th>
+                <th>Nota 1</th>
+                <th>Nota 2</th>
+                <th>Nota 3</th>
+                <th>Promedio</th>
+            </tr>
+        </thead>
+        <tbody id="lista"></tbody>
+    </table>
+
 <script>
     let agregados = 0;
-    function agregar(){
-        if (agregardos === 10){
-            alert("Ya alcanzo el maximo de estudiantes (10)");
+    
+    function agregar() {
+        if (agregados >= 10) { // El límite debe ser >= 10 para evitar más de 10
+            alert("Ya se alcanzó el máximo de estudiantes (10)");
             return;
         }
-        let nombre = document.getElementById("nombre").value;
+
+        // Obtener valores de los campos
+        let profesor = document.getElementById("profesor").value.trim();
+        let materia = document.getElementById("materia").value.trim();
+        let estudiante = document.getElementById("estudiante").value.trim();
+        
+        // Convertir notas a números. Usamos parseFloat para permitir decimales.
         let nota1 = parseFloat(document.getElementById("nota1").value);
         let nota2 = parseFloat(document.getElementById("nota2").value);
         let nota3 = parseFloat(document.getElementById("nota3").value);
-        if (nombre === "" || isNaN(nota1) || isNaN(nota2) || isNaN(nota3) || nota1 < 0 || nota1 > 5 || nota2 < 0 || nota2 > 5 || nota3 < 0 || nota3 > 5){
-            alert("Datos incorrectos.");
+
+        // Lógica de validación mejorada: 
+        // 1. Verifica que los campos de texto no estén vacíos.
+        // 2. Verifica que las notas sean números válidos (no NaN).
+        // 3. Verifica que las notas estén en el rango de 0 a 5.
+        if (profesor === "" || materia === "" || estudiante === "" ||
+            isNaN(nota1) || isNaN(nota2) || isNaN(nota3) ||
+            nota1 < 0 || nota1 > 5 || nota2 < 0 || nota2 > 5 || nota3 < 0 || nota3 > 5) {
+            
+            alert("Datos incorrectos. Asegúrate de llenar todos los campos y que las notas estén entre 0 y 5.");
             return;
         }
+
+        // Cálculo del promedio
         let promedio = ((nota1 + nota2 + nota3) / 3).toFixed(2);
-        document.getElementById("lista").innerHTML +=`
+
+        // Agregar fila a la tabla (tbody)
+        // ¡IMPORTANTE! Se usa <td> en lugar de <th> para las celdas de datos
+        // y se eliminó la columna extra, para coincidir con 7 encabezados.
+        document.getElementById("lista").innerHTML += `
         <tr> 
-            <td> ${nombre}</td>
-            <td> ${nota1}</td>
-            <td> ${nota2}</td>
-            <td> ${nota3}</td>
-            <td> ${nota3}</td>
-            <td><strong> ${promedio}</strong></td>
+            <td>${profesor}</td>
+            <td>${materia}</td>
+            <td>${estudiante}</td>
+            <td>${nota1}</td>
+            <td>${nota2}</td>
+            <td>${nota3}</td>
+            <td><strong>${promedio}</strong></td>
         </tr>
         `;
+        
+        // Incrementar el contador y resetear el formulario
         agregados++;
         document.getElementById("formEst").reset();
-
     }
 </script>
 </body>
